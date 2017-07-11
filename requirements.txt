@@ -6,3 +6,4 @@ plotly==2.0.12
 matplotlib==2.0.2
 numpy==1.13.1
 flask-wtf==0.14.2
+tk==8.5.19

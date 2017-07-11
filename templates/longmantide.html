@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Gravitational Tide</h1>
+      <p>Calculate gravitational tide based on Longman 1959</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Tide Model</h2>
+        <div id='plot_id'> {{ plot_div }} </div>
+        <div class="col-md-4" id='model_controls'>
+              <form method="POST" action="/longmantide">
+                {{ model_form.csrf_token }}
+
+                <div class="form-group">
+                  <label for="startfield">Start Time</label>
+                  {{ model_form.startfield(class_="form-control") }}
+                  <small id="startfieldHelp" class="form-text text-muted">When to start the model (UTC)</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="durationfield">Run Duration</label>
+                  {{ model_form.durationfield(class_="form-control") }}
+                  <small id="startfieldHelp" class="form-text text-muted">How long to run the model (days)</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="startfield">Interval</label>
+                  {{ model_form.intervalfield(class_="form-control") }}
+                  <small id="startfieldHelp" class="form-text text-muted">How often to compute the tide</small>
+                </div>
+
+              </div>
+                <div class="col-md-4">
+                <div class="form-group">
+                  <label for="startfield">Latitude</label>
+                  {{ model_form.latfield(class_="form-control") }}
+                  <small id="startfieldHelp" class="form-text text-muted">Station Latitude</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="startfield">Longitude</label>
+                  {{ model_form.lonfield(class_="form-control") }}
+                  <small id="startfieldHelp" class="form-text text-muted">Station Longitude</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="startfield">Elevation</label>
+                  {{ model_form.elevationfield(class_="form-control") }}
+                  <small id="startfieldHelp" class="form-text text-muted">Station Elevation</small>
+                </div>
+
+                <div class="form-group">
+                  <input class="btn btn-primary" type="submit" value="Calculate">
+                </div>
+          </form>
+        </div>
+          <div class="col-md-4">
+            <h2>How it Works</h2>
+            This app runs the tidal model devised by IM Longman in his seminal
+            1959 paper. The formulation is still used for corrections to
+            gravitational survey data and other geophysical applications.
+          </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

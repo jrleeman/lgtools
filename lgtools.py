@@ -5,7 +5,7 @@ from wtforms.ext.dateutil.fields import DateTimeField
 from wtforms.validators import DataRequired
 import datetime
 from datetime import timedelta
-from longmantide import longmantide
+import longmantide
 from datetime import datetime
 import plotly
 from plotly.graph_objs import Scatter, Layout

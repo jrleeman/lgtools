@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import numpy as np
-import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from math import sqrt, atan, asin, acos, sin, cos, radians
 from collections import namedtuple
@@ -143,21 +142,7 @@ class TideModel():
             self.results.gravity_moon.append(gm)
             self.results.gravity_sun.append(gs)
             self.results.gravity_total.append(g)
-
-    def plot(self):
-        """
-        Make a simple plot of the gravitational tide results from the
-        model run.
-        """
-        fig = plt.figure(figsize=(12, 6))
-        ax1 = plt.subplot(111)
-        ax1.set_xlabel(r'Date', fontsize=18)
-        ax1.set_ylabel(r'Anomaly [mGal]', fontsize=18)
-        ax1.tick_params(axis='both', which='major', labelsize=16)
-        ax1.plot_date(self.results.model_time, self.results.gravity_total,
-                      '-k', linewidth=2)
-        plt.show()
-        return fig, ax1
+            
 
     def write(self,fname):
         """

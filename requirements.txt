@@ -3,7 +3,5 @@ jinja2==2.9.5
 gunicorn==19.7.1
 wtforms==2.1
 plotly==2.0.12
-matplotlib==2.0.2
 numpy==1.13.1
 flask-wtf==0.14.2
-tk

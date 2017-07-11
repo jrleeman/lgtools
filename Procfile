@@ -1,1 +1,1 @@
-web: gunicorn leemangeotools:app --log-file -
+web: gunicorn lgtools:app --log-file -

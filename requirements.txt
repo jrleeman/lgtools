@@ -1,7 +1,7 @@
-flask==0.12
-jinja2==2.9.5
-gunicorn==19.7.1
-wtforms==2.1
-plotly==2.0.12
-numpy==1.13.1
+flask==1.0.2
+jinja2==2.10.1
+gunicorn==19.9.0
+wtforms==2.2.1
+plotly==3.8.0
+numpy==1.16.2
 flask-wtf==0.14.2
